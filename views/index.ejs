@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <title>Fileuploader for</title>
+</head>
+
+<body class="bg-gray-800 text-white">
+  <% if (locals.fileLink !=null) { %>
+    <div class="my-4">
+      Your file is uploaded. <a href="<%= locals.fileLink %>">
+        <%= locals.fileLink %>
+      </a>
+    </div>
+    <% } %>
+
+      <div class="container mx-auto">
+        <form action="/upload" method="post" class="grid gap-4 max-w-md mx-auto" enctype="multipart/form-data">
+
+          <label for="text" class="text-sm">Title:</label> <!-- Corrected 'titel' to 'title' -->
+          <input type="text" id="text" name="text" class="py-2 px-4 rounded-md bg-gray-700 text-white"> <!-- Corrected 'titel' to 'title' -->
+          <hr>
+          <label for="file" class="text-sm">File:</label>
+          <input type="file" id="file" name="file" required class="py-2 px-4 rounded-md bg-gray-700 text-white">
+
+          <label for="password" class="text-sm">Password:</label>
+          <input type="password" id="password" name="password" class="py-2 px-4 rounded-md bg-gray-700 text-white">
+
+          <button type="submit" class="btn btn-primary w-full bg-gray-700 p-2 rounded-md">Share</button>
+        </form>
+      </div>
+
+      <script src="https://unpkg.com/@flowbite/js/dist/flowbite.min.js"></script>
+</body>
+
+</html>
