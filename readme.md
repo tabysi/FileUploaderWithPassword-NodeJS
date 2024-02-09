@@ -4,6 +4,13 @@
 
 - [TailwindCSS](https://tailwindcss.com)
 - [Flowbite](https://flowbite.com)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [ejs](https://www.npmjs.com/package/ejs)
+- [express](https://www.npmjs.com/package/express)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+- [multer](https://www.npmjs.com/package/multer)
+- [nodemon](https://www.npmjs.com/package/nodemon)
 
 ---
 

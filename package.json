@@ -1,8 +1,8 @@
 {
-  "name": "file-sharing-node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "fileuploader",
+  "version": "0.0.1",
+  "description": "FileUploader",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js"
   },
