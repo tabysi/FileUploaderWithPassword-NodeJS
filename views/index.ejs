@@ -1,40 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-  <title>Fileuploader for</title>
+  <title>File Uploader</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      max-width: 1280px;
+      margin: auto;
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .container {
+      max-width: 768px;
+      margin: auto;
+      padding-top: 40px;
+    }
+    .form-label {
+      font-size: 14px;
+    }
+    .form-input {
+      padding: 8px 16px;
+      border-radius: 4px;
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 10px;
+      border: none;
+    }
+    .form-input[type="file"] {
+      cursor: pointer;
+    }
+    .btn {
+      width: 100%;
+      padding: 8px;
+      background-color: #333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #333;
+    }
+    .file-info {
+      margin-top: 20px;
+    }
+    .file-info a {
+      color: #1ea7fd;
+    }
+  </style>
 </head>
+<body>
+  
+  <div class="container">
+    <form action="/upload" method="post" class="grid gap-4 max-w-md mx-auto" enctype="multipart/form-data">
 
-<body class="bg-gray-800 text-white">
-  <% if (locals.fileLink !=null) { %>
-    <div class="my-4">
-      Your file is uploaded. <a href="<%= locals.fileLink %>">
-        <%= locals.fileLink %>
-      </a>
-    </div>
-    <% } %>
+      <label for="text" class="form-label">Title:</label>
+      <input type="text" id="text" name="text" class="form-input">
 
-      <div class="container mx-auto">
-        <form action="/upload" method="post" class="grid gap-4 max-w-md mx-auto" enctype="multipart/form-data">
+      <label for="file" class="form-label">File:</label>
+      <input type="file" id="file" name="file" required class="form-input">
 
-          <label for="text" class="text-sm">Title:</label> <!-- Corrected 'titel' to 'title' -->
-          <input type="text" id="text" name="text" class="py-2 px-4 rounded-md bg-gray-700 text-white"> <!-- Corrected 'titel' to 'title' -->
-          <hr>
-          <label for="file" class="text-sm">File:</label>
-          <input type="file" id="file" name="file" required class="py-2 px-4 rounded-md bg-gray-700 text-white">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" name="password" class="form-input">
 
-          <label for="password" class="text-sm">Password:</label>
-          <input type="password" id="password" name="password" class="py-2 px-4 rounded-md bg-gray-700 text-white">
+      <button type="submit" class="btn btn-primary">Share</button>
+    </form>
 
-          <button type="submit" class="btn btn-primary w-full bg-gray-700 p-2 rounded-md">Share</button>
-        </form>
+    <% if (locals.fileLink != null) { %>
+      <br>
+      <hr>
+      <div class="file-info">
+        Your file is uploaded. <a target="_blank" href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
       </div>
+    <% } %>
+  </div>
 
-      <script src="https://unpkg.com/@flowbite/js/dist/flowbite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
-
 </html>
